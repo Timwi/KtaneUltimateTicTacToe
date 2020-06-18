@@ -11,10 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: uTicTacToe
+  id: ultimateTicTacToe
   title: Ultimate Tic Tac Toe
   author: Goofy
-  description: 
+  description: "Behold! Tic Tac Toe\u2019s big brother: Ultimate Tic Tac Toe!\nPlay
+    against the bomb in this suspenseful game. Something the whole family can enjoy!\n\nModule
+    idea by Goofy.\nModule implementation by Goofy and Timwi.\n\nRuleseed supported!\nTwitchPlays
+    supported!"
   version: 1.0
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 08476354afa2c7f47b145a66c93f5836, type: 3}
