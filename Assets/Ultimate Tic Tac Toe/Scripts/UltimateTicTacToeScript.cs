@@ -16,11 +16,13 @@ public class UltimateTicTacToeScript : MonoBehaviour
     public Material[] Materials;
     public GameObject StatusLight;
     public KMRuleSeedable RuleSeedable;
+    public GameObject[] Borders;
 
     static int moduleIdCounter = 1;
     int moduleId;
     bool moduleSolved = false;
     Material white, black;
+    Coroutine gridBorder;
 
     struct Cell
     {
@@ -175,7 +177,7 @@ public class UltimateTicTacToeScript : MonoBehaviour
         {
             currentGameState.grid[i] = new Cell { Button = Cells[i], Label = Cells[i].GetComponentInChildren<TextMesh>(), Color = Random.Range(0, 8) };
             currentGameState.grid[i].Button.GetComponent<MeshRenderer>().material = materialInfos[currentGameState.grid[i].Color].Material;
-            currentGameState.grid[i].Label.color = (materialInfos[currentGameState.grid[i].Color].Color & 2) != 0 ? new Color32(50, 50, 50, 255) : new Color32(235, 235, 235, 255);
+            currentGameState.grid[i].Label.color = (materialInfos[currentGameState.grid[i].Color].Color & 2) != 0 ? new Color32(0, 0, 0, 255) : new Color32(255, 255, 255, 255);
             currentGameState.grid[i].Label.text = "";
             Cells[i].OnInteract += CellPressed(i);
         }
@@ -206,12 +208,19 @@ public class UltimateTicTacToeScript : MonoBehaviour
             {
                 Debug.LogFormat(@"[Ultimate Tic Tac Toe #{0}] You attempted to play in grid {1}{2} but you are restricted to grid {3}{4}. Strike!",
                     moduleId,
-                    (char) ('A' + (cell / 9) % 3), (cell / 9) / 3 + 1,
-                    (char) ('A' + currentGameState.currentValidBigCell.Value), currentGameState.currentValidBigCell.Value / 3 + 1);
+                    (char) ('A' + cell / 9 % 3), cell / 9 / 3 + 1,
+                    (char) ('A' + currentGameState.currentValidBigCell.Value % 3), currentGameState.currentValidBigCell.Value / 3 + 1);
                 BombModule.HandleStrike();
+                if (gridBorder == null)
+                    gridBorder = StartCoroutine(blinkBorder());
                 return false;
             }
-
+            if (gridBorder != null)
+            {
+                StopCoroutine(gridBorder);
+                Borders[currentGameState.currentValidBigCell.Value].gameObject.SetActive(false);
+                gridBorder = null;
+            }
             var result = currentGameState.MakePlayerMove(
                 cell,
                 log: (int c, bool o) =>
@@ -254,6 +263,25 @@ public class UltimateTicTacToeScript : MonoBehaviour
 
             return false;
         };
+    }
+
+    private IEnumerator blinkBorder()
+    {
+        var borders = Enumerable.Range(0, Borders[currentGameState.currentValidBigCell.Value].transform.childCount).Select(ix => Borders[currentGameState.currentValidBigCell.Value].transform.GetChild(ix).gameObject).ToArray();
+        Borders[currentGameState.currentValidBigCell.Value].gameObject.SetActive(true);
+        while (true)
+        {
+            var hue = 0f;
+            while (hue < 1f)
+            {
+                yield return null;
+                hue += Time.deltaTime;
+                for (var i = 0; i < borders.Length; i++)
+                {
+                    borders[i].GetComponent<MeshRenderer>().material.color = Color.HSVToRGB(hue, 1f, 1f);
+                }
+            }
+        }
     }
 
     private IEnumerator SolveAnimation(int bigCell)
