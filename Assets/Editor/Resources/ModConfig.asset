@@ -14,10 +14,12 @@ MonoBehaviour:
   id: ultimateTicTacToe
   title: Ultimate Tic Tac Toe
   author: Goofy
-  description: "Behold! Tic Tac Toe\u2019s big brother: Ultimate Tic Tac Toe!\nPlay
-    against the bomb in this suspenseful game. Something the whole family can enjoy!\n\nModule
-    idea by Goofy.\nModule implementation by Goofy and Timwi.\n\nRuleseed supported!\nTwitchPlays
-    supported!"
+  description: "[b]This is a re-upload of Goofy\u2019s original module with bugfixes
+    and improvements. Please [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2134410172]UNSUBSCRIBE
+    from the old version[/url].[/b]\n\nBehold! Tic Tac Toe\u2019s big brother: Ultimate
+    Tic Tac Toe!\nPlay against the bomb in this suspenseful game. Something the whole
+    family can enjoy!\n\nModule idea by Goofy.\nModule implementation by Goofy and
+    Timwi.\n\nRuleseed supported!\nTwitchPlays supported!"
   version: 1.0
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 08476354afa2c7f47b145a66c93f5836, type: 3}
