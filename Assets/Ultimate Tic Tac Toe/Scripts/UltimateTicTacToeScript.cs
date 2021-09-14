@@ -18,11 +18,11 @@ public class UltimateTicTacToeScript : MonoBehaviour
     public KMRuleSeedable RuleSeedable;
     public GameObject[] Borders;
 
-    static int moduleIdCounter = 1;
-    int moduleId;
-    bool moduleSolved = false;
-    Material white, black;
-    Coroutine gridBorder;
+    private static int moduleIdCounter = 1;
+    private int moduleId;
+    private bool moduleSolved = false;
+    private Material white, black;
+    private Coroutine gridBorder;
 
     struct Cell
     {
@@ -301,6 +301,7 @@ public class UltimateTicTacToeScript : MonoBehaviour
         }
         StatusLight.transform.localPosition = finalPosition;
         BombModule.HandlePass();
+        moduleSolved = true;
         yield break;
     }
 
@@ -318,7 +319,6 @@ public class UltimateTicTacToeScript : MonoBehaviour
         }
         else if ((m = Regex.Match(command, @"^\s*([1-9 ]+)\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)).Success)
         {
-
             var buttons = m.Groups[1].Value.Where(ch => ch.Equals(' ') == false).Select(ch => int.Parse(ch.ToString())).ToList();
             if (buttons.Count % 2 != 0)
             {
@@ -346,7 +346,6 @@ public class UltimateTicTacToeScript : MonoBehaviour
         var solution = FindSolution(currentGameState);
         if (solution == null)
             yield break;
-
 
         foreach (var ix in solution)
         {
