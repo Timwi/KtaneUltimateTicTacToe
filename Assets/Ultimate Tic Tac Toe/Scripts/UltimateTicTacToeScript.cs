@@ -89,6 +89,10 @@ public class UltimateTicTacToeScript : MonoBehaviour
             if (result.BombWins)
                 return result;
 
+            // Check for a draw
+            if (Enumerable.Range(0, 81).All(i => grid[i].OPlaced != null || wonGrids[i / 9] != null))
+                return new MoveResult { Draw = true };
+
             currentValidBigCell = (wonGrids[whereToPlace.Index % 9] != null || Enumerable.Range(0, 9).All(i => grid[whereToPlace.Index % 9 * 9 + i].OPlaced != null)) ? (int?) null : whereToPlace.Index % 9;
             return new MoveResult { NewGameState = this };
         }
