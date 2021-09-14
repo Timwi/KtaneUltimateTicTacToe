@@ -237,6 +237,7 @@ public class UltimateTicTacToeScript : MonoBehaviour
                 setPiece: (Cell c, bool o) =>
                 {
                     c.Label.text = o ? "ſ" : "X";
+                    c.Label.characterSize = 0.02f;
                 },
                 setBigPiece: (Cell[] grid, int big, bool o) =>
                 {
@@ -246,7 +247,7 @@ public class UltimateTicTacToeScript : MonoBehaviour
                         grid[big * 9 + i].Label.color = o ? black.color : white.color;
                         grid[big * 9 + i].Button.GetComponent<MeshRenderer>().material = o ? white : black;
                     }
-                    grid[big * 9 + 4].Label.characterSize *= o ? 3 : 4;
+                    grid[big * 9 + 4].Label.characterSize = 0.02f * (o ? 3 : 4);
                 });
 
             if (result.PlayerWins != null)
