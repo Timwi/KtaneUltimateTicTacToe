@@ -153,9 +153,9 @@ public class UltimateTicTacToeScript : MonoBehaviour
 
     void Start()
     {
-        Debug.LogFormat("[Ultimate Tic Tac Toe #{0}] Version: 2.0", moduleId);
-        var colorNames = "Black,Blue,Green,Cyan,Red,Magenta,Yellow,White".Split(',');
         moduleId = moduleIdCounter++;
+        Debug.LogFormat("[Ultimate Tic Tac Toe #{0}] Version: 2.1", moduleId);
+        var colorNames = "Black,Blue,Green,Cyan,Red,Magenta,Yellow,White".Split(',');
         StartCoroutine(HideStatusLight());
         black = Materials[0];
         white = Materials[7];
