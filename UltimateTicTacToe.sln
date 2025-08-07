@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{28B2A572-051F-4111-4D69-10D355F2CEE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ultimateTicTacToe", "ultimateTicTacToe.csproj", "{7E6EB972-5EBE-15D6-708D-D0B87E0F9072}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{54B76A4D-D903-DE53-38C0-CCB56EDE6267}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ultimateTicTacToe-Editor", "ultimateTicTacToe-Editor.csproj", "{4CA50AEA-BAEA-7B20-319B-6EF8BE53A580}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,19 +11,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{28B2A572-051F-4111-4D69-10D355F2CEE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28B2A572-051F-4111-4D69-10D355F2CEE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28B2A572-051F-4111-4D69-10D355F2CEE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28B2A572-051F-4111-4D69-10D355F2CEE4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54B76A4D-D903-DE53-38C0-CCB56EDE6267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54B76A4D-D903-DE53-38C0-CCB56EDE6267}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54B76A4D-D903-DE53-38C0-CCB56EDE6267}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54B76A4D-D903-DE53-38C0-CCB56EDE6267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6EB972-5EBE-15D6-708D-D0B87E0F9072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6EB972-5EBE-15D6-708D-D0B87E0F9072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6EB972-5EBE-15D6-708D-D0B87E0F9072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6EB972-5EBE-15D6-708D-D0B87E0F9072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA50AEA-BAEA-7B20-319B-6EF8BE53A580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA50AEA-BAEA-7B20-319B-6EF8BE53A580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA50AEA-BAEA-7B20-319B-6EF8BE53A580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA50AEA-BAEA-7B20-319B-6EF8BE53A580}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
+		StartupItem = ultimateTicTacToe.csproj
 	EndGlobalSection
 EndGlobal

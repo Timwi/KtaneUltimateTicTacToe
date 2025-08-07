@@ -1,0 +1,10 @@
+{
+  "name": "ultimateTicTacToe-Editor",
+  "references": [
+    "ultimateTicTacToe"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}
